@@ -1,0 +1,18 @@
+#! /bin/bash
+
+group="jira-developers"
+accountid="557058:f2a3043a-ebcb-4815-9277-e0e14c4d9776"
+
+template='{
+	"accountId": "%s"
+}'
+
+json_final=$(printf "$template" "$accountid")
+curl -i -X POST \
+	  -H "Authorization:Basic $JIRATUTORIAL_AUTH" \
+	  -H "Content-Type:application/json" \
+	  -H "X-Atlassian-Token:no-check" \
+	  "https://jiratutorial.atlassian.net/rest/api/3/group/user?groupname=jira-developers" \
+	  -d \
+	  "$json_final"
+	  

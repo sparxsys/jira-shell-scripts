@@ -1,6 +1,6 @@
 #! /bin/bash
 
-jql="filter=10047"
+jql="filter=10103"
 > /tmp/tmp.csv
 curl -s \
      GET -H "Authorization:Basic $JIRATUTORIAL_AUTH" \
